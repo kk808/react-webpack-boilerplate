@@ -6,6 +6,9 @@ module.exports = {
 	entry: {
 		main: [ Path.resolve('src', 'app/index.js') ]
 	},
+	output: {		
+		filename: '[name].[contenthash].js'
+	},
 	mode: 'production',
 	module: {
 		rules: [

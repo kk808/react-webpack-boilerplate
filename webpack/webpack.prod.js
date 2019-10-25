@@ -6,9 +6,14 @@ var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const merge = require('webpack-merge');
 const common = require('./webpack.common');
 
-module.exports = merge(common, {	
+module.exports = merge(common, {
+	optimization: {
+		splitChunks: {
+			chunks: 'all'
+		}
+	},
 	module: {
-		rules: [			
+		rules: [
 			{
 				test: /\.less$/,
 				use: [ MiniCssExtractPlugin.loader, 'css-loader', 'less-loader' ]
@@ -34,7 +39,8 @@ module.exports = merge(common, {
 			}
 		}),
 		new MiniCssExtractPlugin({
-			filename: 'style.css' //output css file name
+			filename: 'style.[contenthash].css' //output css file name
+			
 		}),
 		new OptimizeCssAssetsPlugin({
 			assetNameRegExp: /\.css$/g,
