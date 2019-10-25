@@ -1,5 +1,5 @@
 # Overview
-Static website boilerplate with Webpack 4
+Basic React app boilerplate with Webpack 4
 
 # Getting started for developer
 ## Requirement
