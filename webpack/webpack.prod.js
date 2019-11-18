@@ -3,14 +3,14 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const merge = require('webpack-merge');
 const common = require('./webpack.common');
 
-module.exports = merge(common, {
-	optimization: {
-		splitChunks: {
-			chunks: 'all'
-		}
+module.exports = merge(common, {	
+	output: {		
+		filename: 'app.[contenthash].js',
+		chunkFilename: 'app.vendors.[contenthash].js',
 	},
 	module: {
 		rules: [
@@ -19,12 +19,25 @@ module.exports = merge(common, {
 				use: [ MiniCssExtractPlugin.loader, 'css-loader', 'less-loader' ]
 			}
 		]
+	},	
+	optimization: {
+		splitChunks: {
+			chunks: 'all'
+		},
+		minimizer: [
+			new TerserPlugin({
+				terserOptions: {
+					compress: {
+						drop_console: true,
+					},
+				},
+			}),
+		],
 	},
 	plugins: [
 		new CleanWebpackPlugin(),
 		new HtmlWebPackPlugin({
 			template: Path.resolve('src', 'app/index.html'),
-			hash: true,
 			minify: {
 				removeComments: true,
 				collapseWhitespace: true,
@@ -39,7 +52,7 @@ module.exports = merge(common, {
 			}
 		}),
 		new MiniCssExtractPlugin({
-			filename: 'style.[contenthash].css' //output css file name
+			filename: 'app.style.[contenthash].css' //output css file name
 			
 		}),
 		new OptimizeCssAssetsPlugin({

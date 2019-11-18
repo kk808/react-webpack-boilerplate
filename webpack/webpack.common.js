@@ -2,14 +2,11 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const Webpack = require('webpack');
 const Path = require('path');
 
-module.exports = {
+module.exports = {	
+	mode: 'production',
 	entry: {
 		main: [ Path.resolve('src', 'app/index.js') ]
 	},
-	output: {		
-		filename: '[name].[contenthash].js'
-	},
-	mode: 'production',
 	module: {
 		rules: [
 			{
