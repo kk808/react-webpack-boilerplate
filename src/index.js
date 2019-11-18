@@ -1,12 +1,12 @@
-import React from 'react';
-import Panel from 'components/panel';
+import React from 'react'
+import Panel from 'components/panel'
 
 const App = () => {
-	return (
-		<React.Fragment>
-			<Panel text="test panel"></Panel>
-		</React.Fragment>
-	);
-};
+  return (
+    <>
+      <Panel text='test' />
+    </>
+  )
+}
 
-export default App;
+export default App
