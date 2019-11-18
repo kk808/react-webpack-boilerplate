@@ -4,9 +4,7 @@ const Path = require('path');
 
 module.exports = {	
 	mode: 'production',
-	entry: {
-		main: [ Path.resolve('src', 'app/index.js') ]
-	},
+	entry:  [ 'core-js/stable', Path.resolve('src', 'app/index.js') ],
 	module: {
 		rules: [
 			{
