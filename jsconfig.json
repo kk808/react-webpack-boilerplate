@@ -1,0 +1,16 @@
+{
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
+  "compilerOptions": {
+    "jsx": "react",
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "./*",
+        "./src/*"
+      ]
+    }
+  }
+}
