@@ -1,16 +1,29 @@
 {
-    "presets": [
-        [
-            "@babel/preset-env",
-            {
-                "targets": {
-                    "ie": "11"
-                }
-            }
-        ],
-        "@babel/preset-react"
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "ie": "11"
+        }
+      }
     ],
-    "plugins": [
-        "@babel/plugin-proposal-class-properties",
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-class-properties",
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "regenerator": true
+      }
     ]
+  ],
+  "env": {
+    "production": {
+      "plugins": [
+        "transform-react-remove-prop-types"
+      ]
+    }
+  }
 }

@@ -1,6 +1,6 @@
 const Path = require('path')
 
-module.exports = (env, argv) => {
-  const mode = argv && argv.mode === 'production' ? 'prod' : 'dev'
+module.exports = () => {
+  const mode = process.env.NODE_ENV === 'production' ? 'prod' : 'dev'
   return require(Path.resolve('webpack', `webpack.${mode}.js`))
 }

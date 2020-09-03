@@ -1,56 +1,59 @@
 {
-    "name": "react-webpack-boilerplate",
-    "version": "1.0.0",
-    "description": "Basic React Webpack Boilerplate",
-    "main": "index.js",
-    "scripts": {
-        "start": "webpack-dev-server --open --hot",
-        "build": "webpack --mode production",
-        "stats": "webpack --mode production -p --json > stats.json",
-        "analyze": "webpack-bundle-analyzer stats.json --port 1234",
-        "standard-check": "npx standard",
-        "standard-fix": "npx standard --fix",
-        "depcheck": "npx depcheck"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/kk808/react-webpack-boilerplate.git"
-    },
-    "keywords": [],
-    "author": "WH",
-    "license": "ISC",
-    "devDependencies": {
-        "@babel/core": "^7.10.2",
-        "@babel/plugin-proposal-class-properties": "^7.10.1",
-        "@babel/preset-env": "^7.10.2",
-        "@babel/preset-react": "^7.10.1",
-        "babel-loader": "^8.1.0",
-        "clean-webpack-plugin": "^3.0.0",
-        "core-js": "^3.6.5",
-        "css-loader": "^3.5.3",
-        "depcheck": "^0.9.2",
-        "eslint": "^6.8.0",
-        "html-webpack-plugin": "^3.2.0",
-        "less": "^3.11.3",
-        "less-loader": "^4.1.0",
-        "mini-css-extract-plugin": "^0.5.0",
-        "optimize-css-assets-webpack-plugin": "^5.0.3",
-        "standard": "^14.3.4",
-        "style-loader": "^0.23.1",
-        "terser-webpack-plugin": "^2.3.7",
-        "webpack": "^4.43.0",
-        "webpack-bundle-analyzer": "^3.8.0",
-        "webpack-cli": "^3.3.11",
-        "webpack-dev-server": "^3.11.0",
-        "webpack-merge": "^4.2.2"
-    },
-    "dependencies": {
-        "react": "^16.13.1",
-        "react-dom": "^16.13.1"
-    },
-    "standard": {
-        "ignore": [
-            "/src/app/"
-        ]
-    }
+  "name": "react-webpack-boilerplate",
+  "version": "1.0.0",
+  "description": "Basic React Webpack Boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --open --hot",
+    "build": "cross-env NODE_ENV=production webpack",
+    "bundle-analyzer": "cross-env NODE_ENV=production webpack --json > stats.json && webpack-bundle-analyzer stats.json --port 1234",
+    "standard-check": "npx standard",
+    "standard-fix": "npx standard --fix",
+    "depcheck": "npx depcheck"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kk808/react-webpack-boilerplate.git"
+  },
+  "keywords": [],
+  "author": "WH",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/plugin-proposal-class-properties": "^7.10.1",
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-react": "^7.10.1",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "clean-webpack-plugin": "^3.0.0",
+    "core-js": "^3.6.5",
+    "cross-env": "^7.0.2",
+    "css-loader": "^3.5.3",
+    "depcheck": "^0.9.2",
+    "eslint": "^6.8.0",
+    "html-webpack-plugin": "^3.2.0",
+    "less": "^3.11.3",
+    "less-loader": "^4.1.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "prop-types": "^15.7.2",
+    "standard": "^14.3.4",
+    "style-loader": "^0.23.1",
+    "terser-webpack-plugin": "^2.3.7",
+    "webpack": "^4.43.0",
+    "webpack-bundle-analyzer": "^3.8.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "standard": {
+    "ignore": [
+      "/src/app/"
+    ]
+  }
 }
