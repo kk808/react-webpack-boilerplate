@@ -1,12 +1,2 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-
-const Panel = ({ text }) => {
-  return <div className='panel'>{text}</div>
-}
-
-Panel.propTypes = {
-  text: PropTypes.string.isRequired,
-}
-
+import Panel from './Panel'
 export default Panel
