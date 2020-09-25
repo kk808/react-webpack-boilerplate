@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styles from './Panel.module.less'
 
 const Panel = ({ text }) => {
   return (
-    <div className='panel' data-testid='panel'>
+    <div data-testid='panel' className={styles.panel}>
       {text}
     </div>
   )

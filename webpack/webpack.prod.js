@@ -16,7 +16,18 @@ module.exports = merge(common, {
     rules: [
       {
         test: /\.less$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader']
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                localIdentName: 'component_[local]__[hash:base64:5]'
+              }
+            }
+          },
+          'less-loader'
+        ]
       }
     ]
   },
@@ -53,7 +64,6 @@ module.exports = merge(common, {
     }),
     new MiniCssExtractPlugin({
       filename: 'app.style.[contenthash].css' // output css file name
-
     }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,

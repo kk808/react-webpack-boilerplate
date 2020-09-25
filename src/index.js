@@ -4,7 +4,8 @@ import Panel from 'components/panel'
 const App = () => {
   return (
     <>
-      <Panel text='Basic React app with Webpack 4' />
+      <h1>Basic React App</h1>
+      <Panel text='Panel component with css module' />
     </>
   )
 }
