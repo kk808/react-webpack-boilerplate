@@ -9,7 +9,7 @@ describe('Panel', () => {
 
     expect(getByTestId('panel')).toHaveTextContent('hello world')
 
-    //screen.debug()
+    // screen.debug()
     screen.debug(container)
   })
 })
