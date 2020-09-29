@@ -5,11 +5,10 @@ import Panel from '../Panel'
 
 describe('Panel', () => {
   it('render panel component correctly', () => {
-    const { getByTestId, container } = render(<Panel text='hello world' />)
+    render(<Panel text='hello world' />)
 
-    expect(getByTestId('panel')).toHaveTextContent('hello world')
+    expect(screen.getByTestId('panel')).toHaveTextContent('hello world')
 
     // screen.debug()
-    screen.debug(container)
   })
 })

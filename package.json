@@ -66,12 +66,6 @@
       "jest"
     ]
   },
-  "jest": {
-    "transform": {
-      "^.+\\.js$": "babel-jest",
-      ".+\\.(css|less)$": "jest-css-modules-transform"
-    }
-  },
   "husky": {
     "hooks": {
       "pre-commit": "npm run pre-commit"
